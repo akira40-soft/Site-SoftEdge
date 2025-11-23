@@ -6,7 +6,6 @@
     <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950/50 to-slate-950"></div>
     <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
   </div>
-
   <div class="relative text-center px-8 max-w-7xl mx-auto">
     <h1 class="text-6xl md:text-8xl lg:text-9xl font-black leading-tight mb-8 opacity-0 translate-y-32">
       Do sonho<br>
@@ -24,16 +23,18 @@
 <main class="relative -mt-32 px-8 pb-32">
   <div class="max-w-7xl mx-auto">
 
-    <!-- HISTÓRIA + EQUIPE -->
-    <div class="grid lg:grid-cols-2 gap-20 items-center mb-32">
+    <!-- HISTÓRIA + FOTO DA EQUIPE (AGORA COM A FOTO REAL, QUADRADA E PERFEITA) -->
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
+      
+      <!-- TEXTO DA HISTÓRIA -->
       <div class="space-y-10 text-xl md:text-2xl leading-relaxed text-gray-200">
         <p class="opacity-0 translate-y-40" style="animation-delay: 0.2s">
           Tudo começou em <strong class="text-cyan-400">2023</strong>, quando quatro amigos decidiram que o mundo precisava de softwares mais <strong>humanos</strong>.
         </p>
         <p class="opacity-0 translate-y-40" style="animation-delay: 0.4s">
-          <strong class="text-3xl font-black text-white">Isaac Quarenta</strong> (CEO) juntou forças com os co-fundadores 
-          <strong class="text-cyan-300">José Lopes</strong>, 
-          <strong class="text-blue-300">Stefâncio Costa</strong> e 
+          <strong class="text-3xl font-black text-white">Isaac Quarenta</strong> (CEO) juntou forças com os co-fundadores
+          <strong class="text-cyan-300">José Lopes</strong>,
+          <strong class="text-blue-300">Stefâncio Costa</strong> e
           <strong class="text-purple-300">Tiago Rodrigues</strong>.
         </p>
         <p class="opacity-0 translate-y-40" style="animation-delay: 0.6s">
@@ -45,13 +46,17 @@
         </p>
       </div>
 
-      <!-- FOTO DA EQUIPE (substitua quando tiver) -->
+      <!-- FOTO DA EQUIPE — QUADRADA, PERFEITA, ESTILO THE SOFT EDGE -->
       <div class="opacity-0 translate-y-40" style="animation-delay: 0.5s">
-        <div class="glass p-10 rounded-3xl shadow-2xl">
-          <div class="bg-gray-800/50 border-2 border-dashed border-gray-600 rounded-3xl h-96 flex flex-col items-center justify-center text-center">
-            <i data-lucide="users" class="w-24 h-24 text-gray-500 mb-6"></i>
-            <p class="text-2xl text-gray-400">Isaac, José, Stefâncio e Tiago</p>
-            <p class="text-lg text-gray-500 mt-2">Foto da equipe em breve :)</p>
+        <div class="glass p-6 md:p-10 rounded-3xl shadow-2xl ring-4 ring-cyan-500/20 hover:ring-cyan-400/50 transition-all duration-700">
+          <div class="relative overflow-hidden rounded-3xl">
+            <img src="assets/equipe.jpg" alt="Equipe SoftEdge Corporation - Isaac, José, Stefâncio e Tiago" 
+                 class="w-full h-auto object-cover aspect-square shadow-2xl">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
+              <h3 class="text-3xl md:text-4xl font-black text-white drop-shadow-2xl">Nossa Equipe</h3>
+              <p class="text-lg text-gray-200 mt-2 drop-shadow-lg">Isaac • José • Stefâncio • Tiago</p>
+            </div>
           </div>
         </div>
       </div>
@@ -97,28 +102,30 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
-
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   lucide.createIcons();
 
-  const lenis = new Lenis({ duration: 1.8, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+  const lenis = new Lenis({
+    duration: 1.8,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+  });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(time => lenis.raf(time * 1000));
 
   // Animações de entrada
-  gsap.utils.toArray("[class*='opacity-0']").forEach((el, i) => {
+  gsap.utils.toArray("[class*='opacity-0']").forEach((el) => {
     gsap.to(el, {
       opacity: 1,
       y: 0,
       duration: 1.6,
       ease: "power4.out",
-      delay: el.style.animationDelay ? parseFloat(el.style.animationDelay) : i * 0.1,
+      delay: el.style.animationDelay ? parseFloat(el.style.animationDelay) : 0,
       scrollTrigger: { trigger: el, start: "top 85%" }
     });
   });
 
-  // Parallax hero
+  // Parallax suave no hero
   gsap.to("section > div:first-child", {
     yPercent: -40,
     ease: "none",
