@@ -1,6 +1,6 @@
 <!-- components/header.php -->
-<header class="fixed top-0 inset-x-0 z-50 backdrop-blur-2xl bg-black/40 border-b border-white/10 transition-all duration-500">
-  <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+<header class="fixed inset-x-0 top-0 z-50 backdrop-blur-2xl bg-black/50 border-b border-white/10 transition-all duration-400">
+  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
 
     <!-- LOGO + NOME -->
     <a href="index.php" class="flex items-center space-x-4 group">
@@ -11,7 +11,7 @@
     </a>
 
     <!-- MENU DESKTOP -->
-    <nav class="hidden lg:flex items-center space-x-10">
+    <nav class="hidden lg:flex items-center space-x-10 text-lg">
       <a href="index.php" class="text-white/90 hover:text-cyan-400 font-medium transition">Início</a>
 
       <!-- DROPDOWN EMPRESA -->
@@ -22,14 +22,12 @@
         </button>
 
         <div class="absolute top-full left-1/2 -translate-x-1/2 mt-6 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 ease-out pointer-events-none group-hover:pointer-events-auto">
-          <div class="bg-black/70 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+          <div class="bg-black/80 backdrop-blur-2xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
             <a href="sobre.php" class="block px-8 py-5 text-white hover:bg-white/10 transition flex items-center gap-3">
-              <i data-lucide="users" class="w-5 h-5"></i>
-              Sobre nós
+              <i data-lucide="users" class="w-5 h-5"></i> Sobre nós
             </a>
             <a href="projetos.php" class="block px-8 py-5 text-white hover:bg-white/10 transition flex items-center gap-3">
-              <i data-lucide="folder-open" class="w-5 h-5"></i>
-              Projetos
+              <i data-lucide="folder-open" class="w-5 h-5"></i> Projetos
             </a>
           </div>
         </div>
@@ -37,21 +35,21 @@
 
       <a href="servicos.php" class="text-white/90 hover:text-cyan-400 font-medium transition">Serviços</a>
 
-      <!-- BOTÃO CONTATO (DESTAQUE) -->
+      <!-- BOTÃO CONTATO -->
       <a href="feedback.php" class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-10 py-4 rounded-full font-bold hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-lg">
         Contato
       </a>
     </nav>
 
-    <!-- BOTÃO MENU MOBILE -->
+    <!-- MENU MOBILE BUTTON -->
     <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
       <i data-lucide="menu" class="w-8 h-8"></i>
     </button>
   </div>
 
   <!-- MENU MOBILE (ESCONDIDO POR PADRÃO) -->
-  <div id="mobile-nav" class="lg:hidden hidden absolute top-full left-0 w-full bg-black/90 backdrop-blur-2xl border-t border-white/10">
-    <nav class="flex flex-col py-6 px-8 space-y-6 text-xl">
+  <div id="mobile-nav" class="lg:hidden hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-t border-white/10">
+    <nav class="flex flex-col py-8 px-10 space-y-8 text-2xl font-medium">
       <a href="index.php" class="text-white hover:text-cyan-400 transition">Início</a>
       <a href="sobre.php" class="text-white hover:text-cyan-400 transition">Sobre nós</a>
       <a href="projetos.php" class="text-white hover:text-cyan-400 transition">Projetos</a>
@@ -61,7 +59,7 @@
   </div>
 </header>
 
-<!-- SCRIPT MENU MOBILE (coloque no final do body ou em app.js) -->
+<!-- SCRIPT MENU MOBILE -->
 <script>
   document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
     document.getElementById('mobile-nav').classList.toggle('hidden');
