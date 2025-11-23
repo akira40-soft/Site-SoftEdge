@@ -1,22 +1,38 @@
-# Dockerfile
-FROM php:8.3-fpm-alpine
+# Dockerfile — SoftEdge Corporation (2025)
+FROM php:8.3-apache
 
-# Instala extensões necessárias + curl pra PocketBase
-RUN apk add --no-cache \
-    libpng-dev \
-    oniguruma-dev \
-    curl \
-    && docker-php-ext-install mbstring exif pcntl bcmath gd
+# Instala apenas o necessário (super leve)
+RUN a2enmod rewrite && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        libpng-dev \
+        libonig-dev \
+        libjpeg-dev \
+        libfreetype6-dev \
+        && docker-php-ext-configure gd --with-freetype --with-jpeg \
+        && docker-php-ext-install -j$(nproc) \
+            mbstring \
+            exif \
+            pcntl \
+            bcmath \
+            gd \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
 
 # Copia o site
 WORKDIR /var/www/html
 COPY . .
 
-# Permissões
-RUN chown -R www-data:www-data /var/www/html
+# Permissões corretas
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html
 
-# Expõe porta 80 (Railway usa $PORT)
-EXPOSE 80
+# Configura Apache pra rodar na porta do Railway
+ENV PORT=8080
+EXPOSE $PORT
 
-# Start PHP-FPM + servidor embutido (pra Railway)
-CMD ["sh", "-c", "php -S 0.0.0.0:$PORT -t /var/www/html"]
+# Substitui a porta padrão do Apache pela variável do Railway
+RUN sed -i "s/80/$PORT/g" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+
+# Start Apache em foreground
+CMD ["apache2-foreground"]
