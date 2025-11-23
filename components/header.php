@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- TÍTULO DINÂMICO (mude por página se quiser) -->
-  <title>SoftEdge Corporation | Desenvolvimento Sob Medida</title>
+  <title>SoftEdge Corporation | Seu software Nosso Objetivo</title>
   
   <!-- FAVICON — LOGO NA ABA DO NAVEGADOR -->
   <link rel="icon" href="/assets/logo.jpeg" type="image/jpeg" sizes="32x32">
