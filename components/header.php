@@ -1,5 +1,18 @@
 <!-- components/header.php -->
-<header class="fixed inset-x-0 top-0 z-50 backdrop-blur-2xl bg-black/50 border-b border-white/10 transition-all duration-400">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoftEdge Corporation</title>
+
+  <!-- Tailwind CDN (funciona direto) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Nosso CSS personalizado -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <!-- Ícones -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
   <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
 
     <!-- LOGO + NOME -->
