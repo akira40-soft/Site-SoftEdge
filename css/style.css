@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .glass { @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl; }
+  .input-field { @apply w-full px-8 py-5 glass focus:border-cyan-400 outline-none transition placeholder-gray-400; }
+  .project-card { @apply glass overflow-hidden group cursor-pointer; }
+  .project-card img { @apply w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2; }
+  .project-overlay { @apply absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-10; }
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  min-height: 100vh;
+}
