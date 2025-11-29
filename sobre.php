@@ -1,140 +1,285 @@
 <?php include 'components/header.php'; ?>
 
-<!-- HERO SOBRE -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<!-- HERO SECTION -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+  <!-- Background -->
   <div class="absolute inset-0 -z-10">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950/50 to-slate-950"></div>
-    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
+    <div class="absolute inset-0 opacity-30">
+      <div class="absolute top-20 left-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+    </div>
   </div>
-  <div class="relative text-center px-8 max-w-7xl mx-auto">
-    <h1 class="text-6xl md:text-8xl lg:text-9xl font-black leading-tight mb-8 opacity-0 translate-y-32">
-      Do sonho<br>
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-gradient">
-        à realidade lógica
-      </span>
-    </h1>
-    <p class="text-xl md:text-3xl lg:text-4xl text-gray-300 max-w-5xl mx-auto opacity-0 translate-y-32">
-      Nos começamos com uma ideia simples.<br class="hidden md:block">
-      Hoje criamos softwares que as pessoas amam usar.
-    </p>
+
+  <!-- Content -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="space-y-8">
+      <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+        Do sonho<br>
+        <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+          à realidade lógica
+        </span>
+      </h1>
+      
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        Começamos com uma ideia simples.<br class="hidden sm:block">
+        Hoje criamos softwares que as pessoas amam usar.
+      </p>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <i data-lucide="chevron-down" class="w-8 h-8 text-white/40"></i>
   </div>
 </section>
 
-<main class="relative -mt-32 px-8 pb-32">
-  <div class="max-w-7xl mx-auto">
+<!-- MAIN CONTENT -->
+<main class="relative py-20 lg:py-32">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <!-- HISTÓRIA + FOTO DA EQUIPE (AGORA COM A FOTO REAL, QUADRADA E PERFEITA) -->
-    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-32">
+    <!-- NOSSA HISTÓRIA -->
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-32">
       
-      <!-- TEXTO DA HISTÓRIA -->
-      <div class="space-y-10 text-xl md:text-2xl leading-relaxed text-gray-200">
-        <p class="opacity-0 translate-y-40" style="animation-delay: 0.2s">
-          Tudo começou em <strong class="text-cyan-400">2023</strong>, quando quatro amigos decidiram que o mundo precisava de softwares mais <strong>humanos</strong>.
-        </p>
-        <p class="opacity-0 translate-y-40" style="animation-delay: 0.4s">
-          <strong class="text-3xl font-black text-white">Isaac Quarenta</strong> (CEO) juntou forças com os co-fundadores
-          <strong class="text-cyan-300">José Lopes</strong>,
-          <strong class="text-blue-300">Stefâncio Costa</strong> e
-          <strong class="text-purple-300">Tiago Rodrigues</strong>.
-        </p>
-        <p class="opacity-0 translate-y-40" style="animation-delay: 0.6s">
-          Juntos criaram a <strong class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600 text-4xl font-black">SoftEdge</strong> — uma empresa que transforma ideias em experiências digitais inesquecíveis.
-        </p>
-        <p class="text-3xl md:text-4xl font-bold text-cyan-400 mt-12 opacity-0 translate-y-40" style="animation-delay: 0.8s">
-          Nos começamos com um sonho.<br>
-          Hoje desenvolvemos realidades lógicas e softwares mais amáveis.
-        </p>
+      <!-- Texto -->
+      <div class="space-y-8">
+        <div class="inline-block px-4 py-2 bg-cyan-500/10 rounded-full border border-cyan-500/20 mb-4">
+          <span class="text-cyan-400 text-sm font-semibold uppercase tracking-wider">Nossa História</span>
+        </div>
+        
+        <div class="space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed">
+          <p>
+            Tudo começou em <span class="text-cyan-400 font-semibold">2023</span>, quando quatro amigos decidiram que o mundo precisava de softwares mais <span class="text-white font-medium">humanos</span>.
+          </p>
+          
+          <p>
+            <span class="text-white font-bold text-xl">Isaac Quarenta</span> <span class="text-gray-400 text-sm">(CEO)</span> juntou forças com os co-fundadores
+            <span class="text-cyan-300 font-medium">José Lopes</span>,
+            <span class="text-blue-300 font-medium">Stefâncio Costa</span> e
+            <span class="text-purple-300 font-medium">Tiago Rodrigues</span>.
+          </p>
+          
+          <p>
+            Juntos criaram a <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-bold text-xl">SoftEdge</span> — uma empresa que transforma ideias em experiências digitais inesquecíveis.
+          </p>
+          
+          <div class="pt-6 mt-8 border-t border-white/10">
+            <p class="text-xl sm:text-2xl font-semibold text-cyan-400 leading-relaxed">
+              Começamos com um sonho.<br>
+              Hoje desenvolvemos realidades lógicas e softwares mais amáveis.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- FOTO DA EQUIPE — QUADRADA, PERFEITA, ESTILO THE SOFT EDGE -->
-      <div class="opacity-0 translate-y-40" style="animation-delay: 0.5s">
-        <div class="glass p-6 md:p-10 rounded-3xl shadow-2xl ring-4 ring-cyan-500/20 hover:ring-cyan-400/50 transition-all duration-700">
-          <div class="relative overflow-hidden rounded-3xl">
-            <img src="assets/equipe.jpg" alt="Equipe SoftEdge Corporation - Isaac, José, Stefâncio e Tiago" 
-                 class="w-full h-auto object-cover aspect-square shadow-2xl">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
-              <h3 class="text-3xl md:text-4xl font-black text-white drop-shadow-2xl">Nossa Equipe</h3>
-              <p class="text-lg text-gray-200 mt-2 drop-shadow-lg">Isaac • José • Stefâncio • Tiago</p>
+      <!-- Imagem da Equipe -->
+      <div class="relative">
+        <div class="relative group">
+          <!-- Card Container -->
+          <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-cyan-500/10 to-blue-500/10 p-1 transition-all duration-500 hover:scale-[1.02]">
+            <div class="relative overflow-hidden rounded-3xl bg-slate-900/80 backdrop-blur-xl">
+              
+              <!-- Image -->
+              <div class="relative aspect-square overflow-hidden">
+                <img src="/assets/equipe.jpg" 
+                     alt="Equipe SoftEdge Corporation - Isaac, José, Stefâncio e Tiago" 
+                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                
+                <!-- Overlay Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                
+                <!-- Text Overlay -->
+                <div class="absolute bottom-0 left-0 right-0 p-8 text-center">
+                  <h3 class="text-2xl sm:text-3xl font-bold text-white mb-2">Nossa Equipe</h3>
+                  <p class="text-gray-300 text-sm sm:text-base">Isaac • José • Stefâncio • Tiago</p>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Decorative Elements -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 bg-cyan-500/20 rounded-full blur-2xl"></div>
+          <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"></div>
         </div>
       </div>
     </div>
 
     <!-- NÚMEROS IMPACTANTES -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-      <div class="text-center glass p-10 rounded-3xl opacity-0 translate-y-40" style="animation-delay: 0.3s">
-        <div class="text-6xl md:text-7xl font-black text-cyan-400">70+</div>
-        <p class="text-xl text-gray-300 mt-4">Projetos entregues</p>
+    <div class="mb-32">
+      <div class="text-center mb-16">
+        <div class="inline-block px-4 py-2 bg-cyan-500/10 rounded-full border border-cyan-500/20 mb-4">
+          <span class="text-cyan-400 text-sm font-semibold uppercase tracking-wider">Nossos Números</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
+          Resultados que inspiram
+        </h2>
       </div>
-      <div class="text-center glass p-10 rounded-3xl opacity-0 translate-y-40" style="animation-delay: 0.4s">
-        <div class="text-6xl md:text-7xl font-black text-blue-400">4.9★</div>
-        <p class="text-xl text-gray-300 mt-4">Satisfação média</p>
-      </div>
-      <div class="text-center glass p-10 rounded-3xl opacity-0 translate-y-40" style="animation-delay: 0.5s">
-        <div class="text-6xl md:text-7xl font-black text-purple-400">24/7</div>
-        <p class="text-xl text-gray-300 mt-4">Suporte dedicado</p>
-      </div>
-      <div class="text-center glass p-10 rounded-3xl opacity-0 translate-y-40" style="animation-delay: 0.6s">
-        <div class="text-6xl md:text-7xl font-black text-green-400">100%</div>
-        <p class="text-xl text-gray-300 mt-4">Código limpo</p>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <!-- Stat 1 -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative bg-slate-900/60 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center transition-all duration-500 hover:border-cyan-500/30">
+            <div class="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-br from-cyan-400 to-cyan-600 bg-clip-text text-transparent mb-3">
+              70+
+            </div>
+            <p class="text-gray-300 text-sm sm:text-base">Projetos entregues</p>
+          </div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative bg-slate-900/60 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center transition-all duration-500 hover:border-blue-500/30">
+            <div class="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-br from-blue-400 to-blue-600 bg-clip-text text-transparent mb-3">
+              4.9★
+            </div>
+            <p class="text-gray-300 text-sm sm:text-base">Satisfação média</p>
+          </div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative bg-slate-900/60 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center transition-all duration-500 hover:border-purple-500/30">
+            <div class="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-br from-purple-400 to-purple-600 bg-clip-text text-transparent mb-3">
+              24/7
+            </div>
+            <p class="text-gray-300 text-sm sm:text-base">Suporte dedicado</p>
+          </div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative bg-slate-900/60 backdrop-blur-xl border border-white/5 rounded-2xl p-8 text-center transition-all duration-500 hover:border-green-500/30">
+            <div class="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-br from-green-400 to-green-600 bg-clip-text text-transparent mb-3">
+              100%
+            </div>
+            <p class="text-gray-300 text-sm sm:text-base">Código limpo</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- CTA FINAL -->
-    <div class="text-center mt-32">
-      <h2 class="text-5xl md:text-7xl font-black mb-12 opacity-0 translate-y-40">
-        Pronto para criar algo incrível juntos?
-      </h2>
-      <a href="feedback.php" class="inline-flex items-center gap-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-2xl px-20 py-9 rounded-full shadow-2xl hover:shadow-cyan-500/50 hover:-translate-y-3 transition-all duration-500 group opacity-0 translate-y-40">
-        Falar com a gente
-        <i data-lucide="arrow-right" class="w-9 h-9 group-hover:translate-x-5 transition"></i>
-      </a>
+    <!-- CTA SECTION -->
+    <div class="relative">
+      <!-- Background -->
+      <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 rounded-3xl blur-3xl"></div>
+      
+      <!-- Content -->
+      <div class="relative bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-3xl p-12 lg:p-16 text-center">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          Pronto para criar algo<br class="hidden sm:block">
+          <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            incrível juntos?
+          </span>
+        </h2>
+        
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-10">
+          Vamos transformar sua ideia em realidade. Entre em contato e descubra como podemos ajudar.
+        </p>
+        
+        <a href="feedback.php" 
+           class="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-lg px-8 py-4 rounded-full shadow-lg hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 group">
+          Falar com a gente
+          <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
     </div>
+
   </div>
 </main>
 
 <?php include 'components/footer.php'; ?>
 
 <!-- SCRIPTS -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  lucide.createIcons();
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lucide icons
+    lucide.createIcons();
 
-  const lenis = new Lenis({
-    duration: 1.8,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
-  });
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add(time => lenis.raf(time * 1000));
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
 
-  // Animações de entrada
-  gsap.utils.toArray("[class*='opacity-0']").forEach((el) => {
-    gsap.to(el, {
-      opacity: 1,
-      y: 0,
-      duration: 1.6,
-      ease: "power4.out",
-      delay: el.style.animationDelay ? parseFloat(el.style.animationDelay) : 0,
-      scrollTrigger: { trigger: el, start: "top 85%" }
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section, main > div > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      observer.observe(el);
     });
   });
-
-  // Parallax suave no hero
-  gsap.to("section > div:first-child", {
-    yPercent: -40,
-    ease: "none",
-    scrollTrigger: { trigger: "section", start: "top top", end: "bottom top", scrub: 1 }
-  });
-});
 </script>
 
 <style>
-  @keyframes gradient { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-  .animate-gradient { background-size: 300% 300%; animation: gradient 12s ease infinite; }
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Image hover effects */
+  img {
+    will-change: transform;
+  }
+
+  /* Gradient animation */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .bg-gradient-to-r {
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0f172a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #06b6d4, #3b82f6);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #0891b2, #2563eb);
+  }
 </style>
