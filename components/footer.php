@@ -1,47 +1,144 @@
 <!-- components/footer.php -->
-<footer class="relative bg-black/60 backdrop-blur-3xl py-24 border-t border-white/10 mt-32 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 text-center">
+<footer class="relative bg-slate-950/95 backdrop-blur-xl border-t border-white/5 mt-20 overflow-hidden">
+  <!-- Gradient Background -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-950/5 to-blue-950/10 pointer-events-none"></div>
+  
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Content -->
+    <div class="py-16 lg:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+        
+        <!-- Column 1: Logo & Description -->
+        <div class="text-center lg:text-left">
+          <div class="flex items-center justify-center lg:justify-start space-x-3 mb-6">
+            <div class="w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600 p-0.5 shadow-lg">
+              <img src="/assets/logo.jpeg" alt="SoftEdge Logo" class="w-full h-full object-cover rounded-xl">
+            </div>
+            <span class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              SoftEdge
+            </span>
+          </div>
+          
+          <p class="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto lg:mx-0">
+            Começamos com um sonho. Hoje desenvolvemos realidades lógicas e softwares mais amáveis.
+          </p>
+          
+          <p class="text-gray-500 text-xs mt-4">
+            Fundada em 2023 por Isaac Quarenta
+          </p>
+        </div>
 
-    <!-- LOGO + NOME -->
-    <div class="flex justify-center items-center space-x-5 mb-10">
-      <img src="assets/logo.jpeg" alt="SoftEdge" class="w-16 h-16 rounded-full shadow-2xl">
-      <span class="text-3xl md:text-4xl font-black text-white">SoftEdge</span>
+        <!-- Column 2: Quick Links -->
+        <div class="text-center lg:text-left">
+          <h3 class="text-white font-semibold text-sm mb-6 uppercase tracking-wider">
+            Navegação
+          </h3>
+          <nav class="space-y-3">
+            <a href="index.php" class="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Início
+            </a>
+            <a href="sobre.php" class="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Sobre Nós
+            </a>
+            <a href="projetos.php" class="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Projetos
+            </a>
+            <a href="servicos.php" class="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Serviços
+            </a>
+            <a href="contato.php" class="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Contato
+            </a>
+            <a href="feedback.php" class="block text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Feedback
+            </a>
+          </nav>
+        </div>
+
+        <!-- Column 3: Contact & Social -->
+        <div class="text-center lg:text-left">
+          <h3 class="text-white font-semibold text-sm mb-6 uppercase tracking-wider">
+            Contato
+          </h3>
+          
+          <!-- Contact Info -->
+          <div class="space-y-4 mb-8">
+            <a href="mailto:softedgecorporation@gmail.com" 
+               class="flex items-center justify-center lg:justify-start gap-3 text-gray-400 hover:text-cyan-400 transition-colors group">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </div>
+              <span class="text-sm">softedgecorporation@gmail.com</span>
+            </a>
+            
+            <a href="https://whatsapp.com/channel/0029VawQLpGHltY2Y87fR83m" 
+               target="_blank"
+               rel="noopener noreferrer"
+               class="flex items-center justify-center lg:justify-start gap-3 text-gray-400 hover:text-cyan-400 transition-colors group">
+              <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+              </div>
+              <span class="text-sm">Canal WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Social Links -->
+          <div class="flex items-center justify-center lg:justify-start gap-3">
+            <a href="https://x.com/softedge40" 
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-10 h-10 rounded-lg bg-white/5 hover:bg-cyan-500/20 flex items-center justify-center transition-all hover:scale-110 group"
+               aria-label="Twitter / X">
+              <i data-lucide="twitter" class="w-5 h-5 text-gray-400 group-hover:text-cyan-400"></i>
+            </a>
+            
+            <a href="mailto:softedgecorporation@gmail.com"
+               class="w-10 h-10 rounded-lg bg-white/5 hover:bg-cyan-500/20 flex items-center justify-center transition-all hover:scale-110 group"
+               aria-label="Email">
+              <i data-lucide="mail" class="w-5 h-5 text-gray-400 group-hover:text-cyan-400"></i>
+            </a>
+            
+            <a href="https://whatsapp.com/channel/0029VawQLpGHltY2Y87fR83m"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-10 h-10 rounded-lg bg-white/5 hover:bg-green-500/20 flex items-center justify-center transition-all hover:scale-110 group"
+               aria-label="WhatsApp">
+              <i data-lucide="message-circle" class="w-5 h-5 text-gray-400 group-hover:text-green-400"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- SLOGAN REAL -->
-    <p class="text-xl md:text-2xl text-gray-200 mb-14 max-w-4xl mx-auto leading-relaxed">
-      Nos começamos com um sonho.<br class="hidden md:block">
-      Hoje desenvolvemos realidades lógicas e softwares mais amáveis.
-    </p>
-
-    <!-- CONTATOS CLICÁVEIS -->
-    <div class="flex justify-center space-x-16 text-4xl mb-16">
-      <a href="mailto:softedgecorporation@gmail.com"
-         class="text-white/70 hover:text-cyan-400 hover:scale-125 transition-all duration-300"
-         title="softedgecorporation@gmail.com">
-        <i data-lucide="mail"></i>
-      </a>
-      <a href="https://x.com/softedge40" target="_blank"
-         class="text-white/70 hover:text-cyan-400 hover:scale-125 transition-all duration-300"
-         title="X (Twitter)">
-        <i data-lucide="twitter"></i>
-      </a>
-      <a href="https://whatsapp.com/channel/0029VawQLpGHltY2Y87fR83m" target="_blank"
-         class="text-white/70 hover:text-cyan-400 hover:scale-125 transition-all duration-300"
-         title="Canal no WhatsApp">
-        <i data-lucide="message-circle"></i>
-      </a>
+    <!-- Bottom Bar -->
+    <div class="border-t border-white/5 py-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
+        <div class="text-center md:text-left">
+          <p>© 2025 <span class="text-white font-medium">SoftEdge Corporation</span>. Todos os direitos reservados.</p>
+        </div>
+        
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:text-cyan-400 transition-colors">Privacidade</a>
+          <a href="#" class="hover:text-cyan-400 transition-colors">Termos</a>
+          <div class="flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-4 h-4"></i>
+            <span>Luanda, Angola</span>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- COPYRIGHT -->
-    <p class="text-gray-500 text-sm md:text-base">
-      © 2025 SoftEdge Corporation. Todos os direitos reservados.<br class="md:hidden">
-      <span class="text-gray-400">Fundada em 2023 por Isaac Quarenta e equipe.</span>
-    </p>
   </div>
 
-  <!-- EFEITO DE FUNDO SUTIL (opcional, mas lindo) -->
-  <div class="absolute inset-0 -z-10 pointer-events-none opacity-20">
-    <div class="absolute inset-0 bg-gradient-to-t from-cyan-500/20 via-transparent to-purple-500/20"></div>
-  </div>
+  <!-- Decorative Elements -->
+  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
 </footer>
+
+<!-- Initialize Icons -->
+<script>
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+</script>
+
+</body>
+</html>
