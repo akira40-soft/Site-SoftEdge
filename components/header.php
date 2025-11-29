@@ -4,132 +4,362 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SoftEdge Corporation</title>
+  <title>SoftEdge Corporation - Soluções em Tecnologia</title>
 
-  <!-- FAVICON + PRÉVIA PERFEITA -->
+  <!-- SEO & SOCIAL -->
+  <meta name="description" content="SoftEdge Corporation - Inovação em desenvolvimento de software, soluções digitais e consultoria tecnológica em Angola.">
+  <meta name="keywords" content="software, tecnologia, desenvolvimento, Angola, Luanda">
+  
+  <!-- FAVICON -->
   <link rel="icon" href="/assets/logo.jpeg" type="image/jpeg">
   <link rel="apple-touch-icon" href="/assets/logo.jpeg">
   <meta property="og:image" content="https://softedge-corporation.up.railway.app/assets/logo.jpeg" />
   <meta property="og:title" content="SoftEdge Corporation" />
+  <meta property="og:description" content="Soluções em tecnologia para transformar seu negócio" />
   <meta name="twitter:image" content="https://softedge-corporation.up.railway.app/assets/logo.jpeg" />
-  <meta name="theme-color" content="#06fcd8">
+  <meta name="theme-color" content="#0891b2">
 
-  <!-- Tailwind + CSS personalizado -->
+  <!-- FONTS (Inter - moderno e profissional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="/assets/css/style.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              900: '#164e63',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- CSS Personalizado -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* Smooth transitions */
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header glass effect */
+    .glass-header {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Logo hover effect */
+    .logo-container {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logo-container:hover {
+      transform: scale(1.05);
+    }
+
+    /* Menu links */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #06b6d4, #3b82f6);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Dropdown animations */
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .dropdown:hover .dropdown-menu,
+    .dropdown-menu:hover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    /* CTA Button */
+    .cta-button {
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.4);
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -10px rgba(6, 182, 212, 0.6);
+    }
+
+    /* Chevron rotation */
+    .chevron-rotate {
+      transition: transform 0.3s ease;
+    }
+
+    .dropdown:hover .chevron-rotate {
+      transform: rotate(180deg);
+    }
+
+    /* Mobile overlay */
+    .mobile-overlay {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-black text-white antialiased">
 
-<header class="fixed inset-x-0 top-0 z-50 backdrop-blur-3xl bg-black/70 border-b border-white/15">
-  <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
-    
-    <!-- LOGO -->
-    <a href="index.php" class="flex items-center space-x-4 group">
-      <div class="w-14 h-14 rounded-full overflow-hidden bg-gradient-to-br from-cyan-400 to-blue-600 p-1.5 group-hover:scale-110 transition-all duration-500 shadow-2xl ring-4 ring-cyan-400/30">
-        <img src="/assets/logo.jpeg" alt="SoftEdge" class="w-full h-full object-cover rounded-full">
-      </div>
-      <span class="text-2xl md:text-3xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-blue-500">
-        SoftEdge
-      </span>
-    </a>
+<body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white antialiased font-sans">
 
-    <!-- MENU DESKTOP -->
-    <nav class="hidden lg:flex items-center space-x-12 text-lg font-medium">
-      <a href="index.php" class="text-white/90 hover:text-cyan-300 transition">Início</a>
+<!-- ==================== HEADER ==================== -->
+<header class="fixed inset-x-0 top-0 z-50 glass-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
       
-      <!-- MENU EMPRESA COM SUBMENU QUE NÃO FECHA MAIS -->
-      <div class="relative" id="empresa-dropdown">
-        <button class="flex items-center gap-2 text-white/90 hover:text-cyan-300 transition focus:outline-none">
-          Empresa
-          <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300" id="chevron"></i>
-        </button>
+      <!-- ========== LOGO ========== -->
+      <a href="index.php" class="flex items-center space-x-3 logo-container">
+        <div class="w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600 p-0.5 shadow-lg ring-2 ring-cyan-500/30">
+          <img src="/assets/logo.jpeg" alt="SoftEdge Logo" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            SoftEdge
+          </span>
+          <span class="text-xs text-gray-400 tracking-wide hidden sm:block">
+            Technology Solutions
+          </span>
+        </div>
+      </a>
 
-        <!-- SUBMENU PERMANENTE AO HOVER + CLICÁVEL -->
-        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-6 w-72 opacity-0 invisible pointer-events-none 
-                    transition-all duration-500 ease-out
-                    group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto
-                    [&:hover]:opacity-100 [&:hover]:visible [&:hover]:pointer-events-auto
-                    z-50" 
-             id="submenu">
-          <div class="bg-black/90 backdrop-blur-3xl rounded-3xl border border-white/20 shadow-2xl ring-4 ring-cyan-500/20 overflow-hidden">
-            <a href="sobre.php" class="flex items-center gap-4 px-8 py-6 text-white hover:bg-white/10 transition">
-              <i data-lucide="users" class="w-6 h-6"></i>
-              <div>
-                <div class="font-bold">Sobre nós</div>
-                <div class="text-sm text-gray-400">Nossa história e equipe</div>
-              </div>
-            </a>
-            <a href="projetos.php" class="flex items-center gap-4 px-8 py-6 text-white hover:bg-white/10 transition">
-              <i data-lucide="folder-open" class="w-6 h-6"></i>
-              <div>
-                <div class="font-bold">Projetos</div>
-                <div class="text-sm text-gray-400">O que já construímos</div>
-              </div>
-            </a>
+      <!-- ========== DESKTOP NAVIGATION ========== -->
+      <nav class="hidden lg:flex items-center space-x-8">
+        <a href="index.php" class="nav-link text-white/90 hover:text-cyan-400 font-medium text-sm">
+          Início
+        </a>
+        
+        <!-- Dropdown Empresa -->
+        <div class="relative dropdown">
+          <button class="nav-link flex items-center gap-1.5 text-white/90 hover:text-cyan-400 font-medium text-sm focus:outline-none">
+            Empresa
+            <i data-lucide="chevron-down" class="w-4 h-4 chevron-rotate"></i>
+          </button>
+
+          <!-- Submenu -->
+          <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64">
+            <div class="bg-slate-900/95 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+              <a href="sobre.php" class="flex items-center gap-4 px-6 py-4 hover:bg-white/5 transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                  <i data-lucide="users" class="w-5 h-5 text-cyan-400"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-white text-sm">Sobre Nós</div>
+                  <div class="text-xs text-gray-400">Nossa história</div>
+                </div>
+              </a>
+              <a href="projetos.php" class="flex items-center gap-4 px-6 py-4 hover:bg-white/5 transition-colors group">
+                <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+                  <i data-lucide="folder-open" class="w-5 h-5 text-blue-400"></i>
+                </div>
+                <div>
+                  <div class="font-semibold text-white text-sm">Projetos</div>
+                  <div class="text-xs text-gray-400">Portfolio completo</div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <a href="servicos.php" class="text-white/90 hover:text-cyan-300 transition">Serviços</a>
-      <a href="contato.php" class="bg-gradient-to-r from-cyan-500 to-blue-600 px-10 py-4 rounded-full font-bold hover:scale-110 hover:shadow-cyan-500/50 transition-all duration-500 shadow-2xl">
-        Contato
-      </a>
-    </nav>
+        <a href="servicos.php" class="nav-link text-white/90 hover:text-cyan-400 font-medium text-sm">
+          Serviços
+        </a>
 
-    <!-- MENU MOBILE -->
-    <button id="mobile-menu-btn" class="lg:hidden text-white p-3 rounded-xl bg-white/10 backdrop-blur-xl hover:bg-white/20 transition">
-      <i data-lucide="menu" class="w-8 h-8"></i>
-    </button>
-  </div>
+        <a href="contato.php" class="nav-link text-white/90 hover:text-cyan-400 font-medium text-sm">
+          Contato
+        </a>
 
-  <!-- MENU MOBILE -->
-  <div id="mobile-nav" class="lg:hidden hidden fixed inset-0 top-24 bg-black/95 backdrop-blur-3xl z-40 pt-10">
-    <nav class="flex flex-col items-center space-y-10 text-3xl font-bold">
-      <a href="index.php" class="text-white hover:text-cyan-400 transition">Início</a>
-      <a href="sobre.php" class="text-white hover:text-cyan-400 transition">Sobre nós</a>
-      <a href="projetos.php" class="text-white hover:text-cyan-400 transition">Projetos</a>
-      <a href="servicos.php" class="text-white hover:text-cyan-400 transition">Serviços</a>
-      <a href="contato.php" class="text-cyan-400">Contato →</a>
-    </nav>
+        <!-- CTA Button -->
+        <a href="https://whatsapp.com/channel/0029VawQLpGHltY2Y87fR83m" 
+           target="_blank"
+           rel="noopener noreferrer"
+           class="cta-button px-6 py-2.5 rounded-full font-semibold text-white text-sm flex items-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          WhatsApp
+        </a>
+      </nav>
+
+      <!-- ========== MOBILE MENU BUTTON ========== -->
+      <button id="mobile-menu-btn" 
+              class="lg:hidden p-2.5 rounded-xl bg-white/10 hover:bg-white/20 transition-colors"
+              aria-label="Menu">
+        <i data-lucide="menu" class="w-6 h-6 text-white"></i>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- SCRIPT MELHORADO — MENU NÃO FECHA + VELOCIDADE TURBINADA -->
+<!-- ========== MOBILE MENU ========== -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 mobile-overlay z-40 hidden lg:hidden"></div>
+
+<aside id="mobile-menu" class="mobile-menu fixed top-0 right-0 bottom-0 w-full max-w-sm bg-slate-900 z-50 lg:hidden shadow-2xl">
+  <div class="flex flex-col h-full">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-6 border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600">
+          <img src="/assets/logo.jpeg" alt="SoftEdge" class="w-full h-full object-cover">
+        </div>
+        <span class="text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+          SoftEdge
+        </span>
+      </div>
+      <button id="mobile-menu-close" class="p-2 rounded-lg hover:bg-white/10 transition-colors">
+        <i data-lucide="x" class="w-6 h-6 text-white"></i>
+      </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="flex-1 overflow-y-auto p-6">
+      <div class="space-y-2">
+        <a href="index.php" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-white">
+          <i data-lucide="home" class="w-5 h-5"></i>
+          <span class="font-medium">Início</span>
+        </a>
+        
+        <a href="sobre.php" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-white">
+          <i data-lucide="users" class="w-5 h-5"></i>
+          <span class="font-medium">Sobre Nós</span>
+        </a>
+        
+        <a href="projetos.php" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-white">
+          <i data-lucide="folder-open" class="w-5 h-5"></i>
+          <span class="font-medium">Projetos</span>
+        </a>
+        
+        <a href="servicos.php" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-white">
+          <i data-lucide="briefcase" class="w-5 h-5"></i>
+          <span class="font-medium">Serviços</span>
+        </a>
+        
+        <a href="contato.php" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors text-white">
+          <i data-lucide="mail" class="w-5 h-5"></i>
+          <span class="font-medium">Contato</span>
+        </a>
+      </div>
+
+      <!-- CTA Mobile -->
+      <div class="mt-8">
+        <a href="https://whatsapp.com/channel/0029VawQLpGHltY2Y87fR83m" 
+           target="_blank"
+           rel="noopener noreferrer"
+           class="flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg hover:shadow-cyan-500/50 transition-all">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          Canal WhatsApp
+        </a>
+      </div>
+    </nav>
+  </div>
+</aside>
+
+<!-- ========== JAVASCRIPT ========== -->
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lucide icons
     lucide.createIcons();
 
-    const dropdown = document.getElementById('empresa-dropdown');
-    const submenu = document.getElementById('submenu');
-    const chevron = document.getElementById('chevron');
+    // Mobile menu elements
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
 
-    // Hover + mantém aberto enquanto o mouse está no submenu
-    dropdown.addEventListener('mouseenter', () => {
-      submenu.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
-      submenu.classList.add('opacity-100', 'visible', 'pointer-events-auto');
-      chevron.classList.add('rotate-180');
+    // Open mobile menu
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+      menuOverlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     });
 
-    dropdown.addEventListener('mouseleave', () => {
-      submenu.classList.add('opacity-0', 'invisible', 'pointer-events-none');
-      submenu.classList.remove('opacity-100', 'visible', 'pointer-events-auto');
-      chevron.classList.remove('rotate-180');
+    // Close mobile menu
+    const closeMobileMenu = () => {
+      mobileMenu.classList.remove('active');
+      menuOverlay.classList.add('hidden');
+      document.body.style.overflow = '';
+    };
+
+    menuClose?.addEventListener('click', closeMobileMenu);
+    menuOverlay?.addEventListener('click', closeMobileMenu);
+
+    // Close on navigation
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
     });
 
-    // Menu mobile (fecha ao clicar fora)
-    document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-      document.getElementById('mobile-nav').classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', (e) => {
-      const menu = document.getElementById('mobile-nav');
-      const btn = document.getElementById('mobile-menu-btn');
-      if (menu && !menu.classList.contains('hidden') && !btn.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.add('hidden');
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
       }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
     });
   });
 </script>
 
-<div class="pt-32"></div>
+<!-- Spacer for fixed header -->
+<div class="h-20"></div>
