@@ -55,7 +55,7 @@
           <p>
             <span class="text-white font-bold text-xl">Isaac Quarenta</span> <span class="text-gray-400 text-sm">(CEO)</span> juntou forças com os co-fundadores
             <span class="text-cyan-300 font-medium">José Lopes</span>,
-            <span class="text-blue-300 font-medium">Stefâncio Costa</span> e
+            <span class="text-blue-300 font-medium">Stefânio Costa</span> e
             <span class="text-purple-300 font-medium">Tiago Rodrigues</span>.
           </p>
           
@@ -82,7 +82,7 @@
               <!-- Image -->
               <div class="relative aspect-square overflow-hidden">
                 <img src="/assets/equipe.jpg" 
-                     alt="Equipe SoftEdge Corporation - Isaac, José, Stefâncio e Tiago" 
+                     alt="Equipe SoftEdge Corporation - Isaac, José, Stefânio e Tiago" 
                      class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                 
                 <!-- Overlay Gradient -->
