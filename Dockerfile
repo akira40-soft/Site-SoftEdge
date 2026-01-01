@@ -1,9 +1,12 @@
 # Dockerfile — SoftEdge Corporation (2025)
 FROM php:8.3-apache
 
+# Fix Apache MPM issue - disable all MPMs except prefork
+RUN a2dismod mpm_event mpm_worker && \
+    a2enmod mpm_prefork rewrite
+
 # Instala apenas o necessário (super leve)
-RUN a2enmod rewrite && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         libpng-dev \
         libonig-dev \
